@@ -1,4 +1,5 @@
 /opt/couchbase/etc/couchbase_init.d start
+# Need to wait for couchbase to accept connections
 sleep 10
 /opt/couchbase/bin/couchbase-cli node-init -c localhost --node-init-data-path=/tmp/couchbase
 /opt/couchbase/bin/couchbase-cli cluster-init -c localhost  --cluster-init-username=polopoly --cluster-init-password=1q2w3e --cluster-init-ramsize=500

@@ -2,8 +2,7 @@ FROM base
 MAINTAINER Jonas Wiklund "jonas.wiklund@atex.com"
 RUN sudo apt-get update
 RUN sudo apt-get -y install libssl0.9.8 python wget
-# RUN wget -nv -P /tmp http://packages.couchbase.com/releases/2.0.1/couchbase-server-community_x86_64_2.0.1.deb
-ADD couchbase-server-community_x86_64_2.0.1.deb /tmp/couchbase-server-community_x86_64_2.0.1.deb
+RUN wget -nv -P /tmp http://packages.couchbase.com/releases/2.0.1/couchbase-server-community_x86_64_2.0.1.deb
 RUN sudo dpkg -i /tmp/couchbase-server-community_x86_64_2.0.1.deb
 ADD init.sh /tmp/init.sh
 RUN /tmp/init.sh
